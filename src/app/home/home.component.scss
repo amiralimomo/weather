@@ -1,0 +1,11 @@
+.main{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom:1rem ;
+}
+.background{
+    background:  linear-gradient(to bottom right,#314755,#26a0da) ;
+    position: fixed; bottom: 0;right: 0;left: 0;top: 0;z-index: -10;
+}
