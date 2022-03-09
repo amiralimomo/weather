@@ -1,107 +1,70 @@
-<section class="weather">
-  <!-- deg -->
-  <div style="display: flex;justify-content: center;align-items: flex-start;padding: 1.5rem 0;">
-    <div style="height: 2.6rem; display: flex;justify-content: center;align-items: flex-start;">
-      <span class="number">19</span>
 
+<section class="main">
+  <app-form (emmiter)="getCityName($event)"></app-form>
+  <section class="weather">
+    <!-- deg -->
+   <h2 style="text-align: center;color: white;font-size: 2rem;">{{cityName}}</h2>
+    <div style="display: flex;justify-content: center;align-items: flex-start;padding: 1.5rem 0;">
+      <div style="height: 2.6rem; display: flex;justify-content: center;align-items: flex-start;">
+        <span class="number">{{current.temp}}</span>
+  
+      </div>
+      <div style="height: 2.6rem;display: flex;justify-content: center;align-items: flex-start;">
+        <span class="deg">o</span>
+  
+      </div>
+      <div style="height: 2.6rem;display: flex;justify-content: center;align-items: flex-start;">
+        <span class="deg-centi">c</span>
+  
+      </div>
     </div>
-    <div style="height: 2.6rem;display: flex;justify-content: center;align-items: flex-start;">
-      <span class="deg">o</span>
-
+    <!-- deg -->
+    <!-- icon -->
+    <div class="text-center">
+      <img  src="assets/Images/{{current.img}}" class="weather-main-icon" alt="weather">
     </div>
-    <div style="height: 2.6rem;display: flex;justify-content: center;align-items: flex-start;">
-      <span class="deg-centi">c</span>
+    <!-- icon -->
+    <div class="back-blure">
+  
+      <table class="table table-borderless text-center" dir="rtl">
+        <thead>
+          <tr>
+            <th scope="col">+3 ساعت</th>
+            <th scope="col">+6 ساعت </th>
+            <th scope="col">+9 ساعت</th>
+            <th scope="col">+12 ساعت</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr >
 
-    </div>
-  </div>
-  <!-- deg -->
-  <!-- icon -->
-  <div class="text-center">
-    <img src="assets/Images/2682849_cloud_cloudy_day_forecast_sun_icon.png" class="weather-main-icon" alt="weather">
-  </div>
-  <!-- icon -->
-  <div class="back-blure">
 
-    <table class="table table-borderless text-center">
-      <thead>
-        <tr>
-          <th scope="col">سه شنبه</th>
-          <th scope="col">دو شنبه</th>
-          <th scope="col">یک شنبه </th>
-          <th scope="col">شنبه</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <!-- th -->
-          <th>
-            <div style="display: flex;justify-content: center;align-items: flex-start;padding: .5rem 0;">
-              <div style="height: 1rem; display: flex;justify-content: center;align-items: flex-start;">
-                <span style="font-size: 1rem;">19</span>
-
-              </div>
-              <div style="height: 1rem;display: flex;justify-content: center;align-items: flex-start;">
-                <span style="font-size: .7rem;">o</span>
-
-              </div>
-            
-            </div>
-          </th>
             <!-- th -->
-          <!-- th -->
-          <th>
-            <div style="display: flex;justify-content: center;align-items: flex-start;padding: .5rem 0;">
-              <div style="height: 1rem; display: flex;justify-content: center;align-items: flex-start;">
-                <span style="font-size: 1rem;">21</span>
-
+            <th *ngFor="let item of fiveDays">
+              <div style="display: flex;justify-content: center;align-items: flex-start;padding: .5rem 0;">
+                <div style="height: 1rem;display: flex;justify-content: center;align-items: flex-start;">
+                  <span style="font-size: .7rem;">o</span>
+  
+                </div>
+                <div style="height: 1rem; display: flex;justify-content: center;align-items: flex-start;">
+                  <span style="font-size: 1rem;">{{item.temp}}</span>
+  
+                </div>
+              
               </div>
-              <div style="height: 1rem;display: flex;justify-content: center;align-items: flex-start;">
-                <span style="font-size: .7rem;">o</span>
-
-              </div>
+            </th>
+              <!-- th -->
+           
+          </tr>
+          <tr style="" >
+            <th *ngFor="let item of fiveDays"><img src="assets/Images/{{item.img}}" style="padding: .2rem;width: 2.4rem;background-color: rgba(0, 0, 0, 0.116);border-radius: 50px; " alt="">
+            </th>
             
-            </div>
-          </th>
-            <!-- th --> <!-- th -->
-          <th>
-            <div style="display: flex;justify-content: center;align-items: flex-start;padding: .5rem 0;">
-              <div style="height: 1rem; display: flex;justify-content: center;align-items: flex-start;">
-                <span style="font-size: 1rem;">14</span>
-
-              </div>
-              <div style="height: 1rem;display: flex;justify-content: center;align-items: flex-start;">
-                <span style="font-size: .7rem;">o</span>
-
-              </div>
-            
-            </div>
-          </th>
-            <!-- th --> <!-- th -->
-          <th>
-            <div style="display: flex;justify-content: center;align-items: flex-start;padding: .5rem 0;">
-              <div style="height: 1rem; display: flex;justify-content: center;align-items: flex-start;">
-                <span style="font-size: 1rem;">12</span>
-
-              </div>
-              <div style="height: 1rem;display: flex;justify-content: center;align-items: flex-start;">
-                <span style="font-size: .7rem;">o</span>
-
-              </div>
-            
-            </div>
-          </th>
-            <!-- th -->
-        </tr>
-        <tr>
-          <th><img src="assets/Images/2682813_cloud_clouds_cloudy_fog_forecast_icon.png" style="width: 2rem;" alt="">
-          </th>
-          <td><img src="assets/Images/2682849_cloud_cloudy_day_forecast_sun_icon.png" style="width: 2rem;" alt=""></td>
-          <td><img src="assets/Images/2682813_cloud_clouds_cloudy_fog_forecast_icon.png" style="width: 2rem;" alt="">
-          </td>
-          <td><img src="assets/Images/2682849_cloud_cloudy_day_forecast_sun_icon.png" style="width: 2rem;" alt=""></td>
-        </tr>
-
-      </tbody>
-    </table>
-  </div>
+          </tr>
+  
+        </tbody>
+      </table>
+    </div>
+  </section>
+  
 </section>

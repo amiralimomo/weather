@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { FormComponent } from './form/form.component';
 import { HeaderComponent } from './header/header.component';
 import { WeatherComponent } from './weather/weather.component';
+import { AboutmeComponent } from './aboutme/aboutme.component';
 
 //material
 // import { MatSliderModule } from '@angular/material/slider';
@@ -18,7 +19,8 @@ import { WeatherComponent } from './weather/weather.component';
     HomeComponent,
     FormComponent,
     HeaderComponent,
-    WeatherComponent
+    WeatherComponent,
+    AboutmeComponent
   ],
   imports: [
     BrowserModule,
